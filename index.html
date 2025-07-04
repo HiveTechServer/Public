@@ -5,422 +5,303 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HiveTech Home</title>
   <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to top, #cc5500, #ff8c42);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to top, #cc5500, #ff8c42);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .main-content {
-                padding: 20px 10px;
-                gap: 20px;
-            }
-            
-            .logo-panel, .buttons-panel, .members-panel, .content-panel {
-                max-width: 100%;
-                padding: 20px;
-            }
-            
-            .buttons-panel {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .glass-button {
-                width: 120px;
-                height: 120px;
-                min-width: 120px;
-                max-width: 120px;
-                min-height: 120px;
-                max-height: 120px;
-                font-size: 14px;
-                padding: 15px;
-            }
-            
-            .button-icon {
-                width: 24px;
-                height: 24px;
-            }
-            
-            .nav-tab {
-                padding: 0 15px;
-                font-size: 12px;
-            }
-            
-            .members-title, .content-title {
-                font-size: 24px;
-            }
-            
-            .members-text, .content-text {
-                font-size: 14px;
-            }
-        }
+    .top-line {
+      width: 100%;
+      height: 2px;
+      background: #000;
+    }
 
-        @media (max-width: 480px) {
-            .glass-button {
-                width: 100px;
-                height: 100px;
-                min-width: 100px;
-                max-width: 100px;
-                min-height: 100px;
-                max-height: 100px;
-                font-size: 12px;
-                padding: 10px;
-            }
-            
-            .button-icon {
-                width: 20px;
-                height: 20px;
-            }
-            
-            .nav-tab {
-                padding: 0 10px;
-                font-size: 11px;
-            }
-            
-            .bottom-info {
-                padding: 8px 15px;
-            }
-            
-            .info-text {
-                font-size: 11px;
-            }
-        }
+    .top-nav {
+      background: #333;
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      height: 35px;
+    }
 
-        /* Top navigation */
-        .top-line {
-            width: 100%;
-            height: 2px;
-            background: #000;
-        }
+    .nav-tab {
+      padding: 0 20px;
+      background: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      position: relative;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      text-decoration: none;
+    }
 
-        .top-nav {
-            background: #333;
-            display: flex;
-            justify-content: flex-start;
-            align-items: stretch;
-            height: 35px;
-        }
+    .nav-tab.active {
+      background: #ff8c42;
+    }
 
-        .nav-tab {
-            padding: 0 20px;
-            background: transparent;
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-size: 14px;
-            position: relative;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            height: 100%;
-        }
+    .nav-tab:hover:not(.active) {
+      background: rgba(255, 140, 66, 0.3);
+    }
 
-        .nav-tab.active {
-            background: #ff8c42;
-        }
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 30px;
+    }
 
-        .nav-tab:hover:not(.active) {
-            background: rgba(255, 140, 66, 0.3);
-        }
+    .logo-panel {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
 
-        /* Main content area */
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            gap: 30px;
-        }
+    .logo-container {
+      position: relative;
+      display: inline-block;
+    }
 
-        /* Logo panel */
-        .logo-panel {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            width: 100%;
-            max-width: 500px;
-            text-align: center;
-        }
+    .logo-background {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-        .logo-container {
-            position: relative;
-            display: inline-block;
-        }
+    .logo-placeholder {
+      width: 120px;
+      height: 120px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #333;
+      border: 2px dashed rgba(255, 255, 255, 0.4);
+    }
 
-        .logo-background {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(8px);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    .buttons-panel {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .logo-placeholder {
-            width: 120px;
-            height: 120px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #333;
-            border: 2px dashed rgba(255, 255, 255, 0.4);
-        }
+    .glass-button {
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 150px;
+      height: 150px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      white-space: nowrap;
+      text-decoration: none;
+    }
 
-        /* Buttons panel */
-        .buttons-panel {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            width: 100%;
-            max-width: 800px;
-            display: flex;
-            flex-direction: row;
-            gap: 30px;
-            align-items: center;
-            justify-content: center;
-        }
+    .glass-button:hover {
+      background: rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
 
-        .glass-button {
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 20px;
-            color: white;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            width: 150px;
-            height: 150px;
-            min-width: 150px;
-            max-width: 150px;
-            min-height: 150px;
-            max-height: 150px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            white-space: nowrap;
-        }
+    .glass-button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
 
-        .glass-button:hover {
-            background: rgba(0, 0, 0, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
+    .button-icon {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      flex-shrink: 0;
+    }
 
-        .glass-button:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
+    .content-panel {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      max-width: 800px;
+      height: 320px;
+      padding: 0;
+      margin-top: 40px;
+    }
 
-        .glass-button.selected {
-            background: rgba(255, 215, 0, 0.3);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.2);
-            border: 1px solid rgba(255, 215, 0, 0.4);
-        }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 15px;
+    }
 
-        .button-icon {
-            width: 30px;
-            height: 30px;
-            display: inline-block;
-            flex-shrink: 0;
-        }
+    .bottom-section {
+      margin-top: auto;
+    }
 
-        /* Bottom section */
-        .bottom-section {
-            margin-top: auto;
-        }
+    .bottom-line {
+      width: 100%;
+      height: 2px;
+      background: #000;
+    }
 
-        .bottom-line {
-            width: 100%;
-            height: 2px;
-            background: #000;
-        }
+    .bottom-info {
+      background: #333;
+      padding: 8px 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      min-height: 35px;
+    }
 
-        .bottom-info {
-            background: #333;
-            padding: 8px 20px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            min-height: 35px;
-        }
+    .info-text {
+      color: #ccc;
+      font-size: 12px;
+    }
 
-        .info-text {
-            color: #ccc;
-            font-size: 12px;
-        }
+    @media (max-width: 768px) {
+      .main-content {
+        padding: 20px 10px;
+        gap: 20px;
+      }
+      .logo-panel, .buttons-panel, .content-panel {
+        max-width: 100%;
+        padding: 20px;
+      }
+      .glass-button {
+        width: 120px;
+        height: 120px;
+        font-size: 14px;
+        padding: 15px;
+      }
+      .button-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
 
-        /* Meet the members page */
-        .members-content {
-            display: none;
-            flex: 1;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .members-content.active {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .members-panel {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .members-title {
-            color: white;
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .members-text {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        /* Add smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Content sections positioning */
-        .content-section {
-            min-height: 100vh;
-            padding-top: 80px;
-        }
-        .smp-content, .cmp-content, .info-content, .addons-content {
-            display: none;
-            flex: 1;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .smp-content.active, .cmp-content.active, .info-content.active, .addons-content.active {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .content-panel {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .content-title {
-            color: white;
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .content-text {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 16px;
-            line-height: 1.6;
-        }
-    </style>
+    @media (max-width: 480px) {
+      .glass-button {
+        width: 100px;
+        height: 100px;
+        font-size: 12px;
+        padding: 10px;
+      }
+      .button-icon {
+        width: 20px;
+        height: 20px;
+      }
+      .info-text {
+        font-size: 11px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="top-nav">
+    <a class="nav-tab active" href="index.html">Home</a>
+    <a class="nav-tab" href="members.html">Meet the Members</a>
+    <a class="nav-tab" href="addons.html">Server Addons/Mods</a>
+  </div>
+  <div class="top-line"></div>
 
-    <div class="top-nav">
-      <a class="nav-tab active" href="index.html">Home</a>
-      <a class="nav-tab" href="members.html">Meet the Members</a>
-      <a class="nav-tab" href="addons.html">Server Addons/Mods</a>
-    </div>
-    <div class="top-line"></div>
-    
-<div class="main-content">
-
-        <!-- Logo Panel -->
-        <div class="logo-panel">
-          <div class="logo-container">
-            <div class="logo-background">
-              <div class="logo-placeholder">Server Logo Here</div>
-            </div>
-          </div>
+  <div class="home-content main-content">
+    <div class="logo-panel">
+      <div class="logo-container">
+        <div class="logo-background">
+          <div class="logo-placeholder">Server Logo Here</div>
         </div>
-
-        <!-- Buttons Panel -->
-        <div class="buttons-panel">
-          <a class="glass-button" href="smp.html">
-            <svg class="button-icon" viewBox="0 0 24 24" fill="white">
-              <path d="M21 7L9 8L12 4L21 7ZM8 8L6 18L12 4L8 8Z"/>
-            </svg>
-            SMP
-          </a>
-          <a class="glass-button" href="cmp.html">
-            <svg class="button-icon" viewBox="0 0 24 24" fill="white">
-              <rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="2" fill="none"/>
-              <path d="M8 12H16M12 8V16" stroke="white" stroke-width="2"/>
-            </svg>
-            CMP
-          </a>
-          <a class="glass-button" href="info.html">
-            <svg class="button-icon" viewBox="0 0 24 24" fill="white">
-              <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z"/>
-              <path d="M14 2V8H20"/>
-              <path d="M16 13H8M16 17H8M10 9H9H8"/>
-            </svg>
-            Other Info
-          </a>
-        </div>
-        
-</div>
-
-    <div class="bottom-section">
-      <div class="bottom-line"></div>
-      <div class="bottom-info">
-        <span class="info-text">An official HiveTech product</span>
       </div>
     </div>
-    
+
+    <div class="buttons-panel">
+      <button class="glass-button" onclick="loadSection('smp.html')">
+        <svg class="button-icon" viewBox="0 0 24 24" fill="white">
+          <path d="M21 7L9 8L12 4L21 7ZM8 8L6 18L12 4L8 8Z"/>
+        </svg>
+        SMP
+      </button>
+      <button class="glass-button" onclick="loadSection('cmp.html')">
+        <svg class="button-icon" viewBox="0 0 24 24" fill="white">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="2" fill="none"/>
+          <path d="M8 12H16M12 8V16" stroke="white" stroke-width="2"/>
+        </svg>
+        CMP
+      </button>
+      <button class="glass-button" onclick="loadSection('info.html')">
+        <svg class="button-icon" viewBox="0 0 24 24" fill="white">
+          <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z"/>
+          <path d="M14 2V8H20"/>
+          <path d="M16 13H8M16 17H8M10 9H9H8"/>
+        </svg>
+        Other Info
+      </button>
+    </div>
+
+    <div class="content-panel">
+      <iframe id="sectionFrame" src=""></iframe>
+    </div>
+  </div>
+
+  <div class="bottom-section">
+    <div class="bottom-line"></div>
+    <div class="bottom-info">
+      <span class="info-text">An official HiveTech product</span>
+    </div>
+  </div>
+
+  <script>
+    function loadSection(page) {
+      document.getElementById('sectionFrame').src = page;
+    }
+  </script>
 </body>
 </html>

@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meet the Members</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-* {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -31,7 +33,6 @@
       justify-content: flex-start;
       align-items: stretch;
       height: 35px;
-      position: relative;
     }
 
     .nav-tab {
@@ -41,8 +42,6 @@
       color: white;
       cursor: pointer;
       font-size: 14px;
-      position: relative;
-      transition: all 0.3s ease;
       display: flex;
       align-items: center;
       height: 100%;
@@ -68,122 +67,6 @@
       gap: 30px;
     }
 
-    .logo-panel {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      width: 100%;
-      max-width: 500px;
-      text-align: center;
-    }
-
-    .logo-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .logo-background {
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(8px);
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .logo-image {
-      width: 120px;
-      height: 120px;
-      border-radius: 12px;
-      object-fit: contain;
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .logo-placeholder {
-      width: 120px;
-      height: 120px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      color: #333;
-      border: 2px dashed rgba(255, 255, 255, 0.4);
-    }
-
-    .buttons-panel {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 40px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      width: 100%;
-      max-width: 500px;
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 20px;
-      align-items: center;
-      justify-content: center;
-      overflow-x: auto;
-    }
-
-    .glass-button {
-      background: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 20px;
-      color: white;
-      font-size: 16px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      width: 130px;
-      height: 130px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      white-space: nowrap;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-
-    .glass-button.active {
-      background: rgba(255, 140, 66, 0.4);
-      border-color: rgba(255, 140, 66, 0.6);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 140, 66, 0.3);
-    }
-
-    .glass-button:hover:not(.active) {
-      background: rgba(0, 0, 0, 0.3);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .glass-button:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .button-icon {
-      width: 30px;
-      height: 30px;
-      display: inline-block;
-      flex-shrink: 0;
-    }
-
     .content-panel {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(10px);
@@ -192,26 +75,62 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
       width: 100%;
       max-width: 800px;
-      height: 320px;
-      padding: 0;
-      margin-top: 40px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.3s ease;
-      pointer-events: none;
+      padding: 30px;
+      color: white;
     }
 
-    .content-panel.visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
+    .member-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
     }
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 15px;
+    .member-entry {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 10px 20px;
+      gap: 20px;
+    }
+
+    .member-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex: 1;
+    }
+
+    .member-pfp {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .member-name {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .member-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .icon-link i {
+      font-size: 18px;
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    .icon-link:hover i {
+      color: #ffcc66;
     }
 
     .bottom-section {
@@ -243,73 +162,70 @@
         padding: 20px 10px;
         gap: 20px;
       }
-      .logo-panel, .buttons-panel, .content-panel {
-        max-width: 100%;
+      .content-panel {
         padding: 20px;
-      }
-      .glass-button {
-        width: 110px;
-        height: 110px;
-        font-size: 14px;
-        padding: 15px;
-      }
-      .button-icon {
-        width: 24px;
-        height: 24px;
-      }
-      .logo-image, .logo-placeholder {
-        width: 100px;
-        height: 100px;
-      }
-      .nav-tab {
-        padding: 0 15px;
-        font-size: 12px;
-      }
-      .dropdown-content {
-        min-width: 150px;
       }
     }
 
     @media (max-width: 480px) {
-      .glass-button {
-        width: 90px;
-        height: 90px;
-        font-size: 12px;
-        padding: 10px;
+      .member-name {
+        font-size: 14px;
       }
-      .button-icon {
-        width: 20px;
-        height: 20px;
-      }
-      .info-text {
-        font-size: 11px;
-      }
-      .logo-image, .logo-placeholder {
-        width: 80px;
-        height: 80px;
-      }
-      .nav-tab {
-        padding: 0 10px;
-        font-size: 11px;
+      .icon-link i {
+        font-size: 16px;
       }
     }
-</style>
+  </style>
 </head>
 <body>
   <div class="top-nav">
-  <a class="nav-tab" href="index.html">Home</a>
-  <a class="nav-tab active" href="members.html">Meet the Members</a>
-  <a class="nav-tab" href="addons.html">Server Addons/Mods</a>
-  <a class="nav-tab" href="updates.html">Server Updates</a>
-</div>
-<div class="top-line"></div>
-
+    <a class="nav-tab" href="index.html">Home</a>
+    <a class="nav-tab active" href="members.html">Meet the Members</a>
+    <a class="nav-tab" href="addons.html">Server Addons/Mods</a>
+    <a class="nav-tab" href="updates.html">Server Updates</a>
+  </div>
+  <div class="top-line"></div>
 
   <div class="main-content">
-    <div class="content-panel visible">
-      <div style="padding: 20px; color: white;">
-        <h2>Meet the Members</h2>
-        <p>Details about server members will go here.</p>
+    <div class="content-panel">
+      <h2>Meet the Members</h2>
+      <div class="member-list">
+
+        <!-- Member with all icons -->
+        <div class="member-entry">
+          <div class="member-info">
+            <img class="member-pfp" src="https://via.placeholder.com/40" alt="PlayerOne PFP">
+            <span class="member-name">PlayerOne</span>
+          </div>
+          <div class="member-links">
+            <a href="https://youtube.com/@playerone" target="_blank" class="icon-link"><i class="fab fa-youtube"></i></a>
+            <a href="https://twitch.tv/playerone" target="_blank" class="icon-link"><i class="fab fa-twitch"></i></a>
+            <a href="https://discord.gg/example" target="_blank" class="icon-link"><i class="fab fa-discord"></i></a>
+          </div>
+        </div>
+
+        <!-- Member with one icon -->
+        <div class="member-entry">
+          <div class="member-info">
+            <img class="member-pfp" src="https://via.placeholder.com/40" alt="BuilderBob PFP">
+            <span class="member-name">BuilderBob</span>
+          </div>
+          <div class="member-links">
+            <a href="https://youtube.com/@builderbob" target="_blank" class="icon-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Member with no links -->
+        <div class="member-entry">
+          <div class="member-info">
+            <img class="member-pfp" src="https://via.placeholder.com/40" alt="SoloSteve PFP">
+            <span class="member-name">SoloSteve</span>
+          </div>
+          <div class="member-links">
+            <!-- No icons -->
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

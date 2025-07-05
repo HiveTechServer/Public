@@ -1,0 +1,25 @@
+[
+  {
+    "name": "BuzzMaster",
+    "ign": "BuzzYT",
+    "role": "owner",
+    "pfp": "https://example.com/buzz-pfp.png",
+    "youtube": "https://youtube.com/buzz",
+    "twitch": "https://twitch.tv/buzz",
+    "discord": "https://discord.com/users/123456789"
+  },
+  {
+    "name": "HexBuilder",
+    "ign": "HexMC",
+    "role": "manager",
+    "pfp": "https://example.com/hex-pfp.png",
+    "twitch": "https://twitch.tv/hex"
+  },
+  {
+    "name": "BeeLover",
+    "ign": "HoneyQueen",
+    "role": "member",
+    "pfp": "https://example.com/honey-pfp.png",
+    "discord": "https://discord.com/users/987654321"
+  }
+]

@@ -6,8 +6,25 @@
   <title>Meet the Members</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
-    /* Keep all your existing styles here */
-    /* ... (unchanged CSS from your file) ... */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to top, #cc5500, #ff8c42);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-line {
+      width: 100%;
+      height: 2px;
+      background: #000;
+    }
 
     .top-nav {
       background: #333;
@@ -15,24 +32,224 @@
       justify-content: flex-start;
       align-items: stretch;
       height: 35px;
+      position: relative;
     }
 
     .nav-tab {
       padding: 0 20px;
+      background: transparent;
+      border: none;
       color: white;
-      text-decoration: none;
+      cursor: pointer;
+      font-size: 14px;
+      position: relative;
+      transition: all 0.3s ease;
       display: flex;
       align-items: center;
-      font-size: 14px;
-      background: transparent;
-      transition: all 0.3s ease;
+      height: 100%;
+      text-decoration: none;
     }
 
     .nav-tab.active {
       background: #ff8c42;
+      transform: translateY(3px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    /* Remove dropdown styles (no longer needed) */
+    .nav-tab:hover:not(.active) {
+      background: rgba(255, 140, 66, 0.3);
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 30px;
+    }
+
+    .logo-panel {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      max-width: 800px;
+      text-align: center;
+      color: white;
+    }
+
+    .intro {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .global-map-panel {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 800px;
+      width: 100%;
+      color: white;
+      font-size: 18px;
+    }
+
+    .global-map-panel img {
+      max-width: 100%;
+      border-radius: 15px;
+    }
+
+    .members-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .member-card {
+      display: flex;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 20px;
+      color: white;
+      width: 100%;
+      max-width: 450px;
+      align-items: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .member-pfp {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      margin-right: 20px;
+      object-fit: cover;
+      background: #333;
+    }
+
+    .member-info {
+      flex: 1;
+    }
+
+    .member-name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .member-ign {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 4px;
+    }
+
+    .member-role {
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 8px;
+    }
+
+    .role-owner {
+      background: maroon;
+      color: white;
+    }
+
+    .role-manager {
+      background: magenta;
+      color: white;
+    }
+
+    .role-member {
+      background: cyan;
+      color: black;
+    }
+
+    .member-role i {
+      margin-right: 6px;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+    .social-icons .youtube { color: red; }
+    .social-icons .twitch { color: purple; }
+    .social-icons .discord { color: #5865F2; }
+
+    .bottom-section {
+      margin-top: auto;
+    }
+
+    .bottom-line {
+      width: 100%;
+      height: 2px;
+      background: #000;
+    }
+
+    .bottom-info {
+      background: #333;
+      padding: 8px 20px;
+      display: flex;
+      justify-content: flex-end;
+      color: #ccc;
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .member-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .member-pfp {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        padding: 20px 10px;
+        gap: 20px;
+      }
+
+      .logo-panel,
+      .global-map-panel {
+        max-width: 100%;
+        padding: 20px;
+      }
+
+      .nav-tab {
+        padding: 0 15px;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-tab {
+        padding: 0 10px;
+        font-size: 11px;
+      }
+
+      .bottom-info {
+        font-size: 11px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -42,6 +259,7 @@
     <a class="nav-tab" href="addons.html">Server Addons/Mods</a>
     <a class="nav-tab" href="updates.html">Server Updates</a>
   </div>
+  <div class="top-line"></div>
 
   <div class="main-content">
     <div class="logo-panel">
@@ -50,12 +268,13 @@
         Come explore the incredible crew that makes HiveTech buzz! From bilders to storage tech to farm designers, meet our wonderful team and see where they're from on our global HiveMap!
       </p>
     </div>
-    <div class="members-grid" id="membersGrid"></div>
 
     <div class="global-map-panel">
       <h3>Member Global Map</h3>
       <img src="IMG_2316.jpeg" alt="Global Map" />
     </div>
+
+    <div class="members-grid" id="membersGrid"></div>
   </div>
 
   <div class="bottom-section">
@@ -64,7 +283,6 @@
   </div>
 
   <script>
-    // Updated to fetch from raw GitHub link
     fetch('https://raw.githubusercontent.com/HiveTechServer/Public/main/members.json')
       .then(res => res.json())
       .then(data => {

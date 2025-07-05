@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,7 +70,7 @@
       gap: 30px;
     }
 
-    .logo-panel {
+    .logo-panel, .global-map-panel {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(10px);
       border-radius: 15px;
@@ -87,43 +88,30 @@
       margin-top: 10px;
     }
 
-    .global-map-panel {
-      text-align: center;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 30px;
-      max-width: 800px;
-      width: 100%;
-      color: white;
-      font-size: 18px;
-    }
-
     .global-map-panel img {
       max-width: 100%;
       border-radius: 15px;
     }
 
     .members-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
       width: 100%;
       max-width: 1000px;
     }
 
     .member-card {
-      display: flex;
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(10px);
       border-radius: 15px;
       padding: 20px;
       color: white;
-      width: 100%;
-      max-width: 450px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
       align-items: center;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      width: 100%;
     }
 
     .member-pfp {
@@ -216,38 +204,10 @@
         flex-direction: column;
         align-items: flex-start;
       }
+
       .member-pfp {
         margin-right: 0;
         margin-bottom: 10px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .main-content {
-        padding: 20px 10px;
-        gap: 20px;
-      }
-
-      .logo-panel,
-      .global-map-panel {
-        max-width: 100%;
-        padding: 20px;
-      }
-
-      .nav-tab {
-        padding: 0 15px;
-        font-size: 12px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .nav-tab {
-        padding: 0 10px;
-        font-size: 11px;
-      }
-
-      .bottom-info {
-        font-size: 11px;
       }
     }
   </style>

@@ -1,25 +1,18 @@
 [
   {
-    "name": "BuzzMaster",
-    "ign": "BuzzYT",
+    "name": "FireBee",
+    "ign": "FireBee45",
     "role": "owner",
-    "pfp": "https://example.com/buzz-pfp.png",
-    "youtube": "https://youtube.com/buzz",
-    "twitch": "https://twitch.tv/buzz",
-    "discord": "https://discord.com/users/123456789"
+    "pfp": "https://images-ext-1.discordapp.net/external/MWPvUZvGwOKl-Po80NnMh7JUU6ReI-q8pBD1AG9v234/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/752432778947067944/4c1ec8039d8400aaf0f4d050bed041ee.png",
+    "youtube": "https://youtube.com/@FireBee45",
+    "twitch": "https://www.twitch.tv/firebeelive",
+    "discord": "https://discord.gg/k8SzMjMn9X"
   },
   {
-    "name": "HexBuilder",
-    "ign": "HexMC",
+    "name": "Citrus",
+    "ign": "CitrusFruit2078",
     "role": "manager",
-    "pfp": "https://example.com/hex-pfp.png",
-    "twitch": "https://twitch.tv/hex"
-  },
-  {
-    "name": "BeeLover",
-    "ign": "HoneyQueen",
-    "role": "member",
-    "pfp": "https://example.com/honey-pfp.png",
-    "discord": "https://discord.com/users/987654321"
+    "pfp": "https://images-ext-1.discordapp.net/external/Qr3x0hXZM_fm3WS6wMge3EEDk_EnJypBw-BOw2FbLDk/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/609742543092973568/212d6fb3ec5f14bf54f74caf69414866.png",
+    "youtube": "https://youtube.com/@bigcitrusfruit"
   }
 ]

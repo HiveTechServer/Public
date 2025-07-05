@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HiveTech Home</title>
   <style>
-    * {
+* {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -31,6 +31,7 @@
       justify-content: flex-start;
       align-items: stretch;
       height: 35px;
+      position: relative;
     }
 
     .nav-tab {
@@ -50,6 +51,8 @@
 
     .nav-tab.active {
       background: #ff8c42;
+      transform: translateY(3px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
     .nav-tab:hover:not(.active) {
@@ -89,6 +92,15 @@
       padding: 20px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
     }
 
     .logo-placeholder {
@@ -245,9 +257,16 @@
         width: 24px;
         height: 24px;
       }
-      .logo-placeholder {
+      .logo-image, .logo-placeholder {
         width: 100px;
         height: 100px;
+      }
+      .nav-tab {
+        padding: 0 15px;
+        font-size: 12px;
+      }
+      .dropdown-content {
+        min-width: 150px;
       }
     }
 
@@ -265,18 +284,23 @@
       .info-text {
         font-size: 11px;
       }
-      .logo-placeholder {
+      .logo-image, .logo-placeholder {
         width: 80px;
         height: 80px;
       }
+      .nav-tab {
+        padding: 0 10px;
+        font-size: 11px;
+      }
     }
-  </style>
+</style>
 </head>
 <body>
   <div class="top-nav">
     <a class="nav-tab active" href="index.html">Home</a>
     <a class="nav-tab" href="members.html">Meet the Members</a>
     <a class="nav-tab" href="addons.html">Server Addons/Mods</a>
+    <a class="nav-tab" href="updates.html">Server Updates</a>
   </div>
   <div class="top-line"></div>
 
@@ -284,7 +308,9 @@
     <div class="logo-panel">
       <div class="logo-container">
         <div class="logo-background">
-          <div class="logo-placeholder">bruh had to remove this but its only temp</div>
+          <img src="logo.png" alt="HiveTech Logo" class="logo-image" 
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="logo-placeholder" style="display: none;">Logo not found</div>
         </div>
       </div>
     </div>
@@ -329,18 +355,11 @@
     function loadSection(page, buttonElement) {
       const iframe = document.getElementById('sectionFrame');
       const contentPanel = document.getElementById('contentPanel');
-      const allButtons = document.querySelectorAll('.glass-button');
-      
-      // Remove active class from all buttons
-      allButtons.forEach(btn => btn.classList.remove('active'));
-      
-      // Add active class to clicked button
-      buttonElement.classList.add('active');
-      
-      // Load the page in iframe
+      if (buttonElement && buttonElement.classList) {
+        document.querySelectorAll('.glass-button').forEach(btn => btn.classList.remove('active'));
+        buttonElement.classList.add('active');
+      }
       iframe.src = page;
-      
-      // Show the content panel with animation
       contentPanel.classList.add('visible');
     }
   </script>

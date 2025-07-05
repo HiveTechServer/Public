@@ -39,6 +39,34 @@
       background: #ff8c42;
     }
 
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
     .main-content {
       flex: 1;
       display: flex;
@@ -169,6 +197,20 @@
       font-size: 12px;
     }
 
+    .global-map-panel {
+      text-align: center;
+      margin-top: 40px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    .global-map-panel img {
+      max-width: 100%;
+      border-radius: 15px;
+    }
+
     @media (max-width: 600px) {
       .member-card {
         flex-direction: column;
@@ -187,6 +229,13 @@
     <a class="nav-tab active" href="members.html">Meet the Members</a>
     <a class="nav-tab" href="addons.html">Server Addons/Mods</a>
     <a class="nav-tab" href="updates.html">Server Updates</a>
+    <div class="dropdown">
+      <a class="nav-tab">More</a>
+      <div class="dropdown-content">
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </div>
 
   <div class="main-content">
@@ -197,6 +246,11 @@
       </p>
     </div>
     <div class="members-grid" id="membersGrid"></div>
+
+    <div class="global-map-panel">
+      <h3>Member Global Map</h3>
+      <img src="your-map-image-url-here.png" alt="Global Map" />
+    </div>
   </div>
 
   <div class="bottom-section">
@@ -233,4 +287,6 @@
       });
   </script>
 </body>
+</html>
+
 </html>

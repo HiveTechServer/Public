@@ -68,7 +68,7 @@
       gap: 30px;
     }
 
-    .logo-panel {
+    .section-panel {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(10px);
       border-radius: 15px;
@@ -76,142 +76,227 @@
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
       width: 100%;
-      max-width: 500px;
+      max-width: 1000px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
       text-align: center;
+      margin-bottom: 25px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    .logo-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .logo-background {
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(8px);
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .logo-image {
-      width: 120px;
-      height: 120px;
-      border-radius: 12px;
-      object-fit: contain;
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .logo-placeholder {
-      width: 120px;
-      height: 120px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
+    .info-content {
+      color: white;
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 800px;
       margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      color: #333;
-      border: 2px dashed rgba(255, 255, 255, 0.4);
     }
 
-    .buttons-panel {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 40px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      width: 100%;
-      max-width: 500px;
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 20px;
-      align-items: center;
-      justify-content: center;
-      overflow-x: auto;
+    .info-content p {
+      margin-bottom: 15px;
     }
 
-    .glass-button {
+    .info-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .server-software-item {
       background: rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       padding: 20px;
       color: white;
-      font-size: 16px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      width: 130px;
-      height: 130px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      white-space: nowrap;
       text-decoration: none;
-      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
-    .glass-button.active {
-      background: rgba(255, 140, 66, 0.4);
-      border-color: rgba(255, 140, 66, 0.6);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 140, 66, 0.3);
-    }
-
-    .glass-button:hover:not(.active) {
+    .server-software-item:hover {
       background: rgba(0, 0, 0, 0.3);
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
 
-    .glass-button:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .button-icon {
-      width: 30px;
-      height: 30px;
-      display: inline-block;
+    .server-software-logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      object-fit: cover;
       flex-shrink: 0;
     }
 
-    .content-panel {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      width: 100%;
-      max-width: 800px;
-      height: 320px;
-      padding: 0;
-      margin-top: 40px;
-      opacity: 0;
-      transform: translateY(20px);
+    .server-software-info {
+      flex: 1;
+    }
+
+    .server-software-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .server-software-dev {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .subsection-container {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .subsection {
+      flex: 1;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .subsection-title {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .developer-group {
+      margin-bottom: 25px;
+    }
+
+    .developer-title {
+      color: #ffcc99;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .addon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .addon-item {
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 15px;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
       transition: all 0.3s ease;
-      pointer-events: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      min-height: 150px;
     }
 
-    .content-panel.visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
+    .addon-item:hover {
+      background: rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
 
-    iframe {
+    .addon-item-no-logo {
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      height: 60px;
       width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 15px;
+      grid-column: 1 / -1;
+    }
+
+    .addon-item-no-logo:hover {
+      background: rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .addon-item-no-logo .addon-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .addon-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      flex-shrink: 0;
+    }
+
+    .addon-name {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      line-height: 1.2;
+    }
+
+    .addon-note {
+      font-size: 11px;
+      color: #ccc;
+      font-style: italic;
+      margin-top: 5px;
+    }
+
+    .non-downloadable-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .non-downloadable-item {
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .non-downloadable-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .non-downloadable-dev {
+      font-size: 12px;
+      color: #ccc;
     }
 
     .bottom-section {
@@ -243,53 +328,44 @@
         padding: 20px 10px;
         gap: 20px;
       }
-      .logo-panel, .buttons-panel, .content-panel {
-        max-width: 100%;
+      
+      .section-panel {
         padding: 20px;
       }
-      .glass-button {
-        width: 110px;
-        height: 110px;
-        font-size: 14px;
-        padding: 15px;
+      
+      .subsection-container {
+        flex-direction: column;
+        gap: 20px;
       }
-      .button-icon {
-        width: 24px;
-        height: 24px;
+      
+      .addon-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
       }
-      .logo-image, .logo-placeholder {
-        width: 100px;
-        height: 100px;
+      
+      .server-software-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
       }
+      
       .nav-tab {
         padding: 0 15px;
         font-size: 12px;
       }
-      .dropdown-content {
-        min-width: 150px;
-      }
     }
 
     @media (max-width: 480px) {
-      .glass-button {
-        width: 90px;
-        height: 90px;
-        font-size: 12px;
-        padding: 10px;
+      .addon-grid {
+        grid-template-columns: 1fr 1fr;
       }
-      .button-icon {
-        width: 20px;
-        height: 20px;
-      }
-      .info-text {
-        font-size: 11px;
-      }
-      .logo-image, .logo-placeholder {
-        width: 80px;
-        height: 80px;
-      }
+      
       .nav-tab {
         padding: 0 10px;
+        font-size: 11px;
+      }
+      
+      .info-text {
         font-size: 11px;
       }
     }
@@ -297,19 +373,165 @@
 </head>
 <body>
   <div class="top-nav">
-  <a class="nav-tab" href="index.html">Home</a>
-  <a class="nav-tab" href="members.html">Meet the Members</a>
-  <a class="nav-tab active" href="addons.html">Server Addons/Mods</a>
-  <a class="nav-tab" href="updates.html">Server Updates</a>
-</div>
-<div class="top-line"></div>
-
+    <a class="nav-tab" href="index.html">Home</a>
+    <a class="nav-tab" href="members.html">Meet the Members</a>
+    <a class="nav-tab active" href="addons.html">Server Addons/Mods</a>
+    <a class="nav-tab" href="updates.html">Server Updates</a>
+  </div>
+  <div class="top-line"></div>
 
   <div class="main-content">
-    <div class="content-panel visible">
-      <div style="padding: 20px; color: white;">
-        <h2>Server Addons / Mods</h2>
-        <p>Information about the current mods/addons used on the server will be displayed here.</p>
+    <!-- Server Additions Info Section -->
+    <div class="section-panel">
+      <h2 class="section-title">Server Additions</h2>
+      <div class="info-content">
+        <p>Welcome to our server additions page! Here you'll find all the addons, mods, and resource packs that enhance your gameplay experience on our servers.</p>
+        <p>You can edit this section to explain the purpose and benefits of the various addons we use across our SMP and CMP servers.</p>
+      </div>
+    </div>
+
+    <!-- Server Software Section -->
+    <div class="section-panel">
+      <h2 class="section-title">Server Software</h2>
+      <a href="https://github.com/LiteLDev/LeviLamina" class="server-software-item" target="_blank">
+        <img src="" alt="LeviLamina Logo" class="server-software-logo" id="levilamina-logo">
+        <div class="server-software-info">
+          <div class="server-software-name">LeviLamina</div>
+          <div class="server-software-dev">Developer: LiteLDev</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- SMP Section -->
+    <div class="section-panel">
+      <h2 class="section-title">SMP</h2>
+      <div class="subsection-container">
+        <div class="subsection">
+          <h3 class="subsection-title">Addons</h3>
+          <div class="developer-group">
+            <div class="developer-title">ForestOfLight</div>
+            <div class="addon-grid">
+              <a href="https://github.com/ForestOfLight/Statistic-Display" class="addon-item" target="_blank">
+                <img src="" alt="Statistic Display Logo" class="addon-logo" id="statistic-display-logo">
+                <div class="addon-name">Statistic Display</div>
+              </a>
+              <a href="https://github.com/ForestOfLight/Canopy" class="addon-item" target="_blank">
+                <img src="" alt="Canopy Logo" class="addon-logo" id="canopy-logo">
+                <div class="addon-name">Canopy</div>
+                <div class="addon-note">We use a back ported version by Nytreon</div>
+              </a>
+              <a href="https://github.com/ForestOfLight/Understudy" class="addon-item" target="_blank">
+                <img src="" alt="Understudy Logo" class="addon-logo" id="understudy-logo">
+                <div class="addon-name">Understudy (Fake Players)</div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="subsection">
+          <h3 class="subsection-title">Mods</h3>
+          <div class="developer-group">
+            <div class="developer-title">GlacieTeam</div>
+            <div class="addon-grid">
+              <a href="https://github.com/GlacieTeam/Glacie" class="addon-item-no-logo" target="_blank">
+                <div class="addon-name">Glacie</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CMP Section -->
+    <div class="section-panel">
+      <h2 class="section-title">CMP</h2>
+      <div class="subsection-container">
+        <div class="subsection">
+          <h3 class="subsection-title">Addons</h3>
+          <div class="developer-group">
+            <div class="developer-title">ForestOfLight</div>
+            <div class="addon-grid">
+              <a href="https://github.com/ForestOfLight/Statistic-Display" class="addon-item" target="_blank">
+                <img src="" alt="Statistic Display Logo" class="addon-logo" id="statistic-display-logo-cmp">
+                <div class="addon-name">Statistic Display</div>
+              </a>
+              <a href="https://github.com/ForestOfLight/Canopy" class="addon-item" target="_blank">
+                <img src="" alt="Canopy Logo" class="addon-logo" id="canopy-logo-cmp">
+                <div class="addon-name">Canopy</div>
+                <div class="addon-note">We use a back ported version by Nytreon</div>
+              </a>
+              <a href="https://github.com/ForestOfLight/Understudy" class="addon-item" target="_blank">
+                <img src="" alt="Understudy Logo" class="addon-logo" id="understudy-logo-cmp">
+                <div class="addon-name">Understudy (Fake Players)</div>
+              </a>
+            </div>
+          </div>
+          <div class="developer-group">
+            <div class="developer-title">StorageUtilities</div>
+            <div class="addon-grid">
+              <a href="https://github.com/StorageUtilities/Storage-Utilities/releases" class="addon-item" target="_blank">
+                <img src="" alt="Storage Utilities Logo" class="addon-logo" id="storage-utilities-logo">
+                <div class="addon-name">Storage Utilities</div>
+              </a>
+            </div>
+          </div>
+          <div class="developer-group">
+            <div class="developer-title">SIsilicon</div>
+            <div class="addon-grid">
+              <a href="https://github.com/SIsilicon/WorldEdit-BE/releases" class="addon-item" target="_blank">
+                <img src="" alt="WorldEdit Logo" class="addon-logo" id="worldedit-logo">
+                <div class="addon-name">WorldEdit</div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="subsection">
+          <h3 class="subsection-title">Mods</h3>
+          <div class="developer-group">
+            <div class="developer-title">GlacieTeam</div>
+            <div class="addon-grid">
+              <a href="https://github.com/GlacieTeam/Glacie" class="addon-item-no-logo" target="_blank">
+                <div class="addon-name">Glacie</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resource Packs Section -->
+    <div class="section-panel">
+      <h2 class="section-title">Resource Packs</h2>
+      <div class="developer-group">
+        <div class="developer-title">RavinMaddHatter</div>
+        <div class="addon-grid">
+          <a href="https://github.com/RavinMaddHatter/Bedrock-Technical-Resource-Pack" class="addon-item" target="_blank">
+            <img src="" alt="TechRP Pack Logo" class="addon-logo" id="techrp-logo">
+            <div class="addon-name">TechRP Pack</div>
+          </a>
+        </div>
+      </div>
+      <div class="developer-group">
+        <div class="developer-title">Bedrock Tweaks</div>
+        <div class="addon-grid">
+          <a href="https://bedrocktweaks.net/" class="addon-item-no-logo" target="_blank">
+            <div class="addon-name">Bedrock Tweaks</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Not Downloadable Section -->
+    <div class="section-panel">
+      <h2 class="section-title">Not Downloadable</h2>
+      <div class="non-downloadable-grid">
+        <div class="non-downloadable-item">
+          <div class="non-downloadable-name">ChatBridge</div>
+          <div class="non-downloadable-dev">Developer: Nipitare</div>
+        </div>
+        <div class="non-downloadable-item">
+          <div class="non-downloadable-name">Nether Fog Remover</div>
+          <div class="non-downloadable-dev">Developer: Nytreon</div>
+        </div>
       </div>
     </div>
   </div>
@@ -320,5 +542,50 @@
       <span class="info-text">An official HiveTech product</span>
     </div>
   </div>
+
+  <script>
+    // Function to load images with error handling
+    async function loadImage(url, elementId) {
+      try {
+        const response = await fetch(url);
+        if (response.ok) {
+          const blob = await response.blob();
+          const imageUrl = URL.createObjectURL(blob);
+          const element = document.getElementById(elementId);
+          if (element) {
+            element.src = imageUrl;
+            element.style.display = 'block';
+          }
+        } else {
+          console.warn(`Failed to load image: ${url}`);
+          // Keep placeholder for failed images
+        }
+      } catch (error) {
+        console.error(`Error loading image ${url}:`, error);
+        // Keep placeholder for failed images
+      }
+    }
+
+    // Load all images when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      // LeviLamina logo
+      loadImage('https://camo.githubusercontent.com/97cfd797c1966f0899707e1a95e6288f454b0b22e6e5b780b59d69376be9f247/68747470733a2f2f736f6369616c6966792e6769742e63692f4c6974654c4465762f4c6576694c616d696e612f696d6167653f6465736372697074696f6e3d3126666f6e743d52616c6577617926666f726b733d31266973737565733d31266c6f676f3d68747470732533412532462532466769746875622e636f6d2532464c6974654c4465762532464c6576694c616d696e612532467261772532467265667325324668656164732532466d61696e253246646f63732532466d61696e253246636f6e74656e74732532466c6f676f2e737667266e616d653d31266f776e65723d31267061747465726e3d436972637569742b426f6172642670756c6c733d31267374617267617a6572733d31267468656d653d4175746f', 'levilamina-logo');
+
+      // Addon logos (SMP)
+      loadImage('https://github.com/ForestOfLight/Statistic-Display/raw/main/pack_icon.png', 'statistic-display-logo');
+      loadImage('https://github.com/ForestOfLight/Canopy/raw/main/pack_icon.png', 'canopy-logo');
+      loadImage('https://github.com/ForestOfLight/Understudy/raw/main/pack_icon.png', 'understudy-logo');
+
+      // Addon logos (CMP - duplicates for separate sections)
+      loadImage('https://github.com/ForestOfLight/Statistic-Display/raw/main/pack_icon.png', 'statistic-display-logo-cmp');
+      loadImage('https://github.com/ForestOfLight/Canopy/raw/main/pack_icon.png', 'canopy-logo-cmp');
+      loadImage('https://github.com/ForestOfLight/Understudy/raw/main/pack_icon.png', 'understudy-logo-cmp');
+      loadImage('https://github.com/StorageUtilities/Storage-Utilities/raw/main/Storage-Utilities%20(BP)/pack_icon.png', 'storage-utilities-logo');
+      loadImage('https://github.com/SIsilicon/WorldEdit-BE/raw/master/BP/pack_icon.png', 'worldedit-logo');
+
+      // Resource pack logos
+      loadImage('https://github.com/RavinMaddHatter/Bedrock-Technical-Resource-Pack/raw/main/pack_icon.png', 'techrp-logo');
+    });
+  </script>
 </body>
 </html>

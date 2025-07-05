@@ -1,0 +1,176 @@
+{
+“serverSoftware”: [
+{
+“name”: “LeviLamina”,
+“developer”: “LiteLDev”,
+“url”: “https://github.com/LiteLDev/LeviLamina”,
+“logoUrls”: [
+“https://raw.githubusercontent.com/LiteLDev/LeviLamina/main/docs/main/contents/logo.svg”,
+“https://github.com/LiteLDev/LeviLamina/raw/main/docs/main/contents/logo.svg”
+],
+“fallback”: “LL”
+}
+],
+“smp”: {
+“addons”: [
+{
+“developer”: “ForestOfLight”,
+“items”: [
+{
+“name”: “Statistic Display”,
+“url”: “https://github.com/ForestOfLight/Statistic-Display”,
+“logoUrls”: [
+“https://raw.githubusercontent.com/ForestOfLight/Statistic-Display/main/pack_icon.png”,
+“https://github.com/ForestOfLight/Statistic-Display/raw/main/pack_icon.png”
+],
+“fallback”: “SD”
+},
+{
+“name”: “Canopy”,
+“url”: “https://github.com/ForestOfLight/Canopy”,
+“logoUrls”: [
+“https://raw.githubusercontent.com/ForestOfLight/Canopy/main/pack_icon.png”,
+“https://github.com/ForestOfLight/Canopy/raw/main/pack_icon.png”
+],
+“fallback”: “CP”,
+“note”: “We use a back ported version by Nytreon”
+},
+{
+“name”: “Understudy (Fake Players)”,
+“url”: “https://github.com/ForestOfLight/Understudy”,
+“logoUrls”: [
+“https://raw.githubusercontent.com/ForestOfLight/Understudy/main/pack_icon.png”,
+“https://github.com/ForestOfLight/Understudy/raw/main/pack_icon.png”
+],
+“fallback”: “US”
+}
+]
+}
+],
+“mods”: [
+{
+“developer”: “GlacieTeam”,
+“items”: [
+{
+“name”: “Glacie”,
+“url”: “https://github.com/GlacieTeam/Glacie”,
+“hasLogo”: false
+}
+]
+}
+]
+},
+“cmp”: {
+“addons”: [
+{
+“developer”: “ForestOfLight”,
+“items”: [
+{
+“name”: “Statistic Display”,
+“url”: “https://github.com/ForestOfLight/Statistic-Display”,
+“logoUrls”: [
+“https://raw.githubusercontent.com/ForestOfLight/Statistic-Display/main/pack_icon.png”,
+“https://github.com/ForestOfLight/Statistic-Display/raw/main/pack_icon.png”
+],
+“fallback”: “SD”
+},
+{
+“name”: “Canopy”,
+“url”: “https://github.com/ForestOfLight/Canopy”,
+“logoUrls”: [
+“https://raw.githubusercontent.com/ForestOfLight/Canopy/main/pack_icon.png”,
+“https://github.com/ForestOfLight/Canopy/raw/main/pack_icon.png”
+],
+“fallback”: “CP”,
+“note”: “We use a back ported version by Nytreon”
+},
+{
+“name”: “Understudy (Fake Players)”,
+“url”: “https://github.com/ForestOfLight/Understudy”,
+“logoUrls”: [
+“https://raw.githubusercontent.com/ForestOfLight/Understudy/main/pack_icon.png”,
+“https://github.com/ForestOfLight/Understudy/raw/main/pack_icon.png”
+],
+“fallback”: “US”
+}
+]
+},
+{
+“developer”: “StorageUtilities”,
+“items”: [
+{
+“name”: “Storage Utilities”,
+“url”: “https://github.com/StorageUtilities/Storage-Utilities/releases”,
+“logoUrls”: [
+“https://raw.githubusercontent.com/StorageUtilities/Storage-Utilities/main/Storage-Utilities%20(BP)/pack_icon.png”,
+“https://github.com/StorageUtilities/Storage-Utilities/raw/main/Storage-Utilities%20(BP)/pack_icon.png”
+],
+“fallback”: “SU”
+}
+]
+},
+{
+“developer”: “SIsilicon”,
+“items”: [
+{
+“name”: “WorldEdit”,
+“url”: “https://github.com/SIsilicon/WorldEdit-BE/releases”,
+“logoUrls”: [
+“https://raw.githubusercontent.com/SIsilicon/WorldEdit-BE/master/BP/pack_icon.png”,
+“https://github.com/SIsilicon/WorldEdit-BE/raw/master/BP/pack_icon.png”
+],
+“fallback”: “WE”
+}
+]
+}
+],
+“mods”: [
+{
+“developer”: “GlacieTeam”,
+“items”: [
+{
+“name”: “Glacie”,
+“url”: “https://github.com/GlacieTeam/Glacie”,
+“hasLogo”: false
+}
+]
+}
+]
+},
+“resourcePacks”: [
+{
+“developer”: “RavinMaddHatter”,
+“items”: [
+{
+“name”: “TechRP Pack”,
+“url”: “https://github.com/RavinMaddHatter/Bedrock-Technical-Resource-Pack”,
+“logoUrls”: [
+“https://raw.githubusercontent.com/RavinMaddHatter/Bedrock-Technical-Resource-Pack/main/pack_icon.png”,
+“https://github.com/RavinMaddHatter/Bedrock-Technical-Resource-Pack/raw/main/pack_icon.png”
+],
+“fallback”: “TP”
+}
+]
+},
+{
+“developer”: “Bedrock Tweaks”,
+“items”: [
+{
+“name”: “Bedrock Tweaks”,
+“url”: “https://bedrocktweaks.net/”,
+“hasLogo”: false
+}
+]
+}
+],
+“notDownloadable”: [
+{
+“name”: “ChatBridge”,
+“developer”: “Nipitare”
+},
+{
+“name”: “Nether Fog Remover”,
+“developer”: “Nytreon”
+}
+]
+}

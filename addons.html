@@ -134,6 +134,13 @@
       border-radius: 8px;
       object-fit: cover;
       flex-shrink: 0;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ccc;
+      font-size: 12px;
+      text-align: center;
     }
 
     .server-software-info {
@@ -255,6 +262,18 @@
       object-fit: cover;
       margin-bottom: 10px;
       flex-shrink: 0;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ccc;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .addon-logo.loaded {
+      background: transparent;
+      color: transparent;
     }
 
     .addon-name {
@@ -323,6 +342,23 @@
       font-size: 12px;
     }
 
+    .loading {
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      padding: 40px;
+    }
+
+    .error {
+      text-align: center;
+      color: #ff6b6b;
+      font-size: 16px;
+      padding: 20px;
+      background: rgba(255, 107, 107, 0.1);
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
     @media (max-width: 768px) {
       .main-content {
         padding: 20px 10px;
@@ -381,6 +417,12 @@
   <div class="top-line"></div>
 
   <div class="main-content">
+    <!-- Loading indicator -->
+    <div id="loading" class="loading">Loading addon data...</div>
+
+    <!-- Error message -->
+    <div id="error" class="error" style="display: none;"></div>
+
     <!-- Server Additions Info Section -->
     <div class="section-panel">
       <h2 class="section-title">Server Additions</h2>
@@ -390,150 +432,8 @@
       </div>
     </div>
 
-    <!-- Server Software Section -->
-    <div class="section-panel">
-      <h2 class="section-title">Server Software</h2>
-      <a href="https://github.com/LiteLDev/LeviLamina" class="server-software-item" target="_blank">
-        <img src="" alt="LeviLamina Logo" class="server-software-logo" id="levilamina-logo">
-        <div class="server-software-info">
-          <div class="server-software-name">LeviLamina</div>
-          <div class="server-software-dev">Developer: LiteLDev</div>
-        </div>
-      </a>
-    </div>
-
-    <!-- SMP Section -->
-    <div class="section-panel">
-      <h2 class="section-title">SMP</h2>
-      <div class="subsection-container">
-        <div class="subsection">
-          <h3 class="subsection-title">Addons</h3>
-          <div class="developer-group">
-            <div class="developer-title">ForestOfLight</div>
-            <div class="addon-grid">
-              <a href="https://github.com/ForestOfLight/Statistic-Display" class="addon-item" target="_blank">
-                <img src="" alt="Statistic Display Logo" class="addon-logo" id="statistic-display-logo">
-                <div class="addon-name">Statistic Display</div>
-              </a>
-              <a href="https://github.com/ForestOfLight/Canopy" class="addon-item" target="_blank">
-                <img src="" alt="Canopy Logo" class="addon-logo" id="canopy-logo">
-                <div class="addon-name">Canopy</div>
-                <div class="addon-note">We use a back ported version by Nytreon</div>
-              </a>
-              <a href="https://github.com/ForestOfLight/Understudy" class="addon-item" target="_blank">
-                <img src="" alt="Understudy Logo" class="addon-logo" id="understudy-logo">
-                <div class="addon-name">Understudy (Fake Players)</div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="subsection">
-          <h3 class="subsection-title">Mods</h3>
-          <div class="developer-group">
-            <div class="developer-title">GlacieTeam</div>
-            <div class="addon-grid">
-              <a href="https://github.com/GlacieTeam/Glacie" class="addon-item-no-logo" target="_blank">
-                <div class="addon-name">Glacie</div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CMP Section -->
-    <div class="section-panel">
-      <h2 class="section-title">CMP</h2>
-      <div class="subsection-container">
-        <div class="subsection">
-          <h3 class="subsection-title">Addons</h3>
-          <div class="developer-group">
-            <div class="developer-title">ForestOfLight</div>
-            <div class="addon-grid">
-              <a href="https://github.com/ForestOfLight/Statistic-Display" class="addon-item" target="_blank">
-                <img src="" alt="Statistic Display Logo" class="addon-logo" id="statistic-display-logo-cmp">
-                <div class="addon-name">Statistic Display</div>
-              </a>
-              <a href="https://github.com/ForestOfLight/Canopy" class="addon-item" target="_blank">
-                <img src="" alt="Canopy Logo" class="addon-logo" id="canopy-logo-cmp">
-                <div class="addon-name">Canopy</div>
-                <div class="addon-note">We use a back ported version by Nytreon</div>
-              </a>
-              <a href="https://github.com/ForestOfLight/Understudy" class="addon-item" target="_blank">
-                <img src="" alt="Understudy Logo" class="addon-logo" id="understudy-logo-cmp">
-                <div class="addon-name">Understudy (Fake Players)</div>
-              </a>
-            </div>
-          </div>
-          <div class="developer-group">
-            <div class="developer-title">StorageUtilities</div>
-            <div class="addon-grid">
-              <a href="https://github.com/StorageUtilities/Storage-Utilities/releases" class="addon-item" target="_blank">
-                <img src="" alt="Storage Utilities Logo" class="addon-logo" id="storage-utilities-logo">
-                <div class="addon-name">Storage Utilities</div>
-              </a>
-            </div>
-          </div>
-          <div class="developer-group">
-            <div class="developer-title">SIsilicon</div>
-            <div class="addon-grid">
-              <a href="https://github.com/SIsilicon/WorldEdit-BE/releases" class="addon-item" target="_blank">
-                <img src="" alt="WorldEdit Logo" class="addon-logo" id="worldedit-logo">
-                <div class="addon-name">WorldEdit</div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="subsection">
-          <h3 class="subsection-title">Mods</h3>
-          <div class="developer-group">
-            <div class="developer-title">GlacieTeam</div>
-            <div class="addon-grid">
-              <a href="https://github.com/GlacieTeam/Glacie" class="addon-item-no-logo" target="_blank">
-                <div class="addon-name">Glacie</div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Resource Packs Section -->
-    <div class="section-panel">
-      <h2 class="section-title">Resource Packs</h2>
-      <div class="developer-group">
-        <div class="developer-title">RavinMaddHatter</div>
-        <div class="addon-grid">
-          <a href="https://github.com/RavinMaddHatter/Bedrock-Technical-Resource-Pack" class="addon-item" target="_blank">
-            <img src="" alt="TechRP Pack Logo" class="addon-logo" id="techrp-logo">
-            <div class="addon-name">TechRP Pack</div>
-          </a>
-        </div>
-      </div>
-      <div class="developer-group">
-        <div class="developer-title">Bedrock Tweaks</div>
-        <div class="addon-grid">
-          <a href="https://bedrocktweaks.net/" class="addon-item-no-logo" target="_blank">
-            <div class="addon-name">Bedrock Tweaks</div>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Not Downloadable Section -->
-    <div class="section-panel">
-      <h2 class="section-title">Not Downloadable</h2>
-      <div class="non-downloadable-grid">
-        <div class="non-downloadable-item">
-          <div class="non-downloadable-name">ChatBridge</div>
-          <div class="non-downloadable-dev">Developer: Nipitare</div>
-        </div>
-        <div class="non-downloadable-item">
-          <div class="non-downloadable-name">Nether Fog Remover</div>
-          <div class="non-downloadable-dev">Developer: Nytreon</div>
-        </div>
-      </div>
-    </div>
+    <!-- Dynamic content will be inserted here -->
+    <div id="dynamic-content"></div>
   </div>
 
   <div class="bottom-section">
@@ -544,48 +444,262 @@
   </div>
 
   <script>
-    // Function to load images with error handling
-    async function loadImage(url, elementId) {
+    // Global variables
+    let addonData = null;
+    let logoCache = new Map();
+
+    // Function to load JSON data
+    async function loadAddonData() {
       try {
-        const response = await fetch(url);
-        if (response.ok) {
-          const blob = await response.blob();
-          const imageUrl = URL.createObjectURL(blob);
-          const element = document.getElementById(elementId);
-          if (element) {
-            element.src = imageUrl;
-            element.style.display = 'block';
-          }
-        } else {
-          console.warn(`Failed to load image: ${url}`);
-          // Keep placeholder for failed images
+        const response = await fetch('addons-data.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
+        addonData = await response.json();
+        return addonData;
       } catch (error) {
-        console.error(`Error loading image ${url}:`, error);
-        // Keep placeholder for failed images
+        console.error('Error loading addon data:', error);
+        throw error;
       }
     }
 
-    // Load all images when page loads
-    document.addEventListener('DOMContentLoaded', function() {
-      // LeviLamina logo
-      loadImage('https://camo.githubusercontent.com/97cfd797c1966f0899707e1a95e6288f454b0b22e6e5b780b59d69376be9f247/68747470733a2f2f736f6369616c6966792e6769742e63692f4c6974654c4465762f4c6576694c616d696e612f696d6167653f6465736372697074696f6e3d3126666f6e743d52616c6577617926666f726b733d31266973737565733d31266c6f676f3d68747470732533412532462532466769746875622e636f6d2532464c6974654c4465762532464c6576694c616d696e612532467261772532467265667325324668656164732532466d61696e253246646f63732532466d61696e253246636f6e74656e74732532466c6f676f2e737667266e616d653d31266f776e65723d31267061747465726e3d436972637569742b426f6172642670756c6c733d31267374617267617a6572733d31267468656d653d4175746f', 'levilamina-logo');
+    // Function to try loading an image with multiple URL fallbacks
+    async function loadImageWithFallbacks(logoUrls, fallback) {
+      // Check cache first
+      const cacheKey = logoUrls.join('|');
+      if (logoCache.has(cacheKey)) {
+        return logoCache.get(cacheKey);
+      }
 
-      // Addon logos (SMP)
-      loadImage('https://github.com/ForestOfLight/Statistic-Display/raw/main/pack_icon.png', 'statistic-display-logo');
-      loadImage('https://github.com/ForestOfLight/Canopy/raw/main/pack_icon.png', 'canopy-logo');
-      loadImage('https://github.com/ForestOfLight/Understudy/raw/main/pack_icon.png', 'understudy-logo');
+      for (const url of logoUrls) {
+        try {
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          
+          const loadPromise = new Promise((resolve, reject) => {
+            img.onload = () => resolve(url);
+            img.onerror = reject;
+            img.src = url;
+          });
 
-      // Addon logos (CMP - duplicates for separate sections)
-      loadImage('https://github.com/ForestOfLight/Statistic-Display/raw/main/pack_icon.png', 'statistic-display-logo-cmp');
-      loadImage('https://github.com/ForestOfLight/Canopy/raw/main/pack_icon.png', 'canopy-logo-cmp');
-      loadImage('https://github.com/ForestOfLight/Understudy/raw/main/pack_icon.png', 'understudy-logo-cmp');
-      loadImage('https://github.com/StorageUtilities/Storage-Utilities/raw/main/Storage-Utilities%20(BP)/pack_icon.png', 'storage-utilities-logo');
-      loadImage('https://github.com/SIsilicon/WorldEdit-BE/raw/master/BP/pack_icon.png', 'worldedit-logo');
+          const result = await loadPromise;
+          logoCache.set(cacheKey, result);
+          return result;
+          
+        } catch (error) {
+          console.warn(`Failed to load image from ${url}:`, error);
+          continue;
+        }
+      }
+      
+      // All URLs failed, return fallback
+      logoCache.set(cacheKey, fallback);
+      return fallback;
+    }
 
-      // Resource pack logos
-      loadImage('https://github.com/RavinMaddHatter/Bedrock-Technical-Resource-Pack/raw/main/pack_icon.png', 'techrp-logo');
-    });
-  </script>
-</body>
-</html>
+    // Function to create server software section
+    function createServerSoftwareSection(serverSoftware) {
+      const section = document.createElement('div');
+      section.className = 'section-panel';
+      section.innerHTML = `
+        <h2 class="section-title">Server Software</h2>
+        <div id="server-software-container"></div>
+      `;
+
+      const container = section.querySelector('#server-software-container');
+      
+      serverSoftware.forEach(async (software, index) => {
+        const item = document.createElement('a');
+        item.href = software.url;
+        item.target = '_blank';
+        item.className = 'server-software-item';
+        
+        const logoId = `server-software-logo-${index}`;
+        item.innerHTML = `
+          <img src="" alt="${software.name} Logo" class="server-software-logo" id="${logoId}">
+          <div class="server-software-info">
+            <div class="server-software-name">${software.name}</div>
+            <div class="server-software-dev">Developer: ${software.developer}</div>
+          </div>
+        `;
+        
+        container.appendChild(item);
+        
+        // Load logo
+        if (software.logoUrls && software.logoUrls.length > 0) {
+          const logoResult = await loadImageWithFallbacks(software.logoUrls, software.fallback);
+          const logoElement = document.getElementById(logoId);
+          if (logoResult !== software.fallback) {
+            logoElement.src = logoResult;
+            logoElement.classList.add('loaded');
+          } else {
+            logoElement.textContent = software.fallback;
+          }
+        }
+      });
+
+      return section;
+    }
+
+    // Function to create addon item
+    function createAddonItem(item, index, sectionPrefix) {
+      if (item.hasLogo === false) {
+        const element = document.createElement('a');
+        element.href = item.url;
+        element.target = '_blank';
+        element.className = 'addon-item-no-logo';
+        element.innerHTML = `<div class="addon-name">${item.name}</div>`;
+        return element;
+      }
+
+      const element = document.createElement('a');
+      element.href = item.url;
+      element.target = '_blank';
+      element.className = 'addon-item';
+      
+      const logoId = `${sectionPrefix}-logo-${index}`;
+      element.innerHTML = `
+        <img src="" alt="${item.name} Logo" class="addon-logo" id="${logoId}">
+        <div class="addon-name">${item.name}</div>
+        ${item.note ? `<div class="addon-note">${item.note}</div>` : ''}
+      `;
+
+      // Load logo if available
+      if (item.logoUrls && item.logoUrls.length > 0) {
+        loadImageWithFallbacks(item.logoUrls, item.fallback).then(logoResult => {
+          const logoElement = document.getElementById(logoId);
+          if (logoResult !== item.fallback) {
+            logoElement.src = logoResult;
+            logoElement.classList.add('loaded');
+          } else {
+            logoElement.textContent = item.fallback;
+          }
+        });
+      }
+
+      return element;
+    }
+
+    // Function to create developer group
+    function createDeveloperGroup(group, sectionPrefix) {
+      const groupDiv = document.createElement('div');
+      groupDiv.className = 'developer-group';
+      
+      groupDiv.innerHTML = `
+        <div class="developer-title">${group.developer}</div>
+        <div class="addon-grid" id="${sectionPrefix}-${group.developer.replace(/\s+/g, '-').toLowerCase()}"></div>
+      `;
+
+      const grid = groupDiv.querySelector('.addon-grid');
+      group.items.forEach((item, index) => {
+        const itemElement = createAddonItem(item, index, `${sectionPrefix}-${group.developer.replace(/\s+/g, '-').toLowerCase()}`);
+        grid.appendChild(itemElement);
+      });
+
+      return groupDiv;
+    }
+
+    // Function to create SMP/CMP section
+    function createServerSection(sectionData, sectionName) {
+      const section = document.createElement('div');
+      section.className = 'section-panel';
+      section.innerHTML = `
+        <h2 class="section-title">${sectionName.toUpperCase()}</h2>
+        <div class="subsection-container">
+          <div class="subsection">
+            <h3 class="subsection-title">Addons</h3>
+            <div id="${sectionName}-addons-container"></div>
+          </div>
+          <div class="subsection">
+            <h3 class="subsection-title">Mods</h3>
+            <div id="${sectionName}-mods-container"></div>
+          </div>
+        </div>
+      `;
+
+      const addonsContainer = section.querySelector(`#${sectionName}-addons-container`);
+      const modsContainer = section.querySelector(`#${sectionName}-mods-container`);
+
+      // Add addons
+      if (sectionData.addons) {
+        sectionData.addons.forEach(group => {
+          const groupElement = createDeveloperGroup(group, `${sectionName}-addon`);
+          addonsContainer.appendChild(groupElement);
+        });
+      }
+
+      // Add mods
+      if (sectionData.mods) {
+        sectionData.mods.forEach(group => {
+          const groupElement = createDeveloperGroup(group, `${sectionName}-mod`);
+          modsContainer.appendChild(groupElement);
+        });
+      }
+
+      return section;
+    }
+
+    // Function to create resource packs section
+    function createResourcePacksSection(resourcePacks) {
+      const section = document.createElement('div');
+      section.className = 'section-panel';
+      section.innerHTML = `
+        <h2 class="section-title">Resource Packs</h2>
+        <div id="resource-packs-container"></div>
+      `;
+
+      const container = section.querySelector('#resource-packs-container');
+      
+      resourcePacks.forEach(group => {
+        const groupElement = createDeveloperGroup(group, 'resource-pack');
+        container.appendChild(groupElement);
+      });
+
+      return section;
+    }
+
+    // Function to create not downloadable section
+    function createNotDownloadableSection(notDownloadable) {
+      const section = document.createElement('div');
+      section.className = 'section-panel';
+      section.innerHTML = `
+        <h2 class="section-title">Not Downloadable</h2>
+        <div class="non-downloadable-grid" id="not-downloadable-container"></div>
+      `;
+
+      const container = section.querySelector('#not-downloadable-container');
+      
+      notDownloadable.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'non-downloadable-item';
+        itemElement.innerHTML = `
+          <div class="non-downloadable-name">${item.name}</div>
+          <div class="non-downloadable-dev">Developer: ${item.developer}</div>
+        `;
+        container.appendChild(itemElement);
+      });
+
+      return section;
+    }
+
+    // Function to render all content
+    function renderContent(data) {
+      const dynamicContent = document.getElementById('dynamic-content');
+      dynamicContent.innerHTML = '';
+
+      // Create and append sections
+      if (data.serverSoftware) {
+        dynamicContent.appendChild(createServerSoftwareSection(data.serverSoftware));
+      }
+
+      if (data.smp) {
+        dynamicContent.appendChild(createServerSection(data.smp, 'smp'));
+      }
+
+      if (data.cmp) {
+        dynamicContent.appendChild(createServerSection(data.cmp, 'cmp'));
+      }
+
+      if (data.resourcePacks) {
+        dynamicContent.appendChild(createResourcePacksSection(data.resourcePacks));
+      }

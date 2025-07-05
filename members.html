@@ -243,7 +243,7 @@
   </div>
 
   <script>
-    fetch('https://github.com/HiveTechServer/Public/blob/main/members.json')
+    fetch('https://raw.githubusercontent.com/HiveTechServer/Public/main/members.json')
       .then(res => res.json())
       .then(data => {
         const grid = document.getElementById('membersGrid');

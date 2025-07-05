@@ -3,399 +3,321 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HiveTech Members</title>
+  <title>Meet the Members</title>
   <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to top, #cc5500, #ff8c42);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to top, #cc5500, #ff8c42);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .main-content {
-                padding: 20px 10px;
-                gap: 20px;
-            }
-            
-            .logo-panel, .buttons-panel, .members-panel, .content-panel {
-                max-width: 100%;
-                padding: 20px;
-            }
-            
-            .buttons-panel {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .glass-button {
-                width: 120px;
-                height: 120px;
-                min-width: 120px;
-                max-width: 120px;
-                min-height: 120px;
-                max-height: 120px;
-                font-size: 14px;
-                padding: 15px;
-            }
-            
-            .button-icon {
-                width: 24px;
-                height: 24px;
-            }
-            
-            .nav-tab {
-                padding: 0 15px;
-                font-size: 12px;
-            }
-            
-            .members-title, .content-title {
-                font-size: 24px;
-            }
-            
-            .members-text, .content-text {
-                font-size: 14px;
-            }
-        }
+    .top-line {
+      width: 100%;
+      height: 2px;
+      background: #000;
+    }
 
-        @media (max-width: 480px) {
-            .glass-button {
-                width: 100px;
-                height: 100px;
-                min-width: 100px;
-                max-width: 100px;
-                min-height: 100px;
-                max-height: 100px;
-                font-size: 12px;
-                padding: 10px;
-            }
-            
-            .button-icon {
-                width: 20px;
-                height: 20px;
-            }
-            
-            .nav-tab {
-                padding: 0 10px;
-                font-size: 11px;
-            }
-            
-            .bottom-info {
-                padding: 8px 15px;
-            }
-            
-            .info-text {
-                font-size: 11px;
-            }
-        }
+    .top-nav {
+      background: #333;
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      height: 35px;
+      position: relative;
+    }
 
-        /* Top navigation */
-        .top-line {
-            width: 100%;
-            height: 2px;
-            background: #000;
-        }
+    .nav-tab {
+      padding: 0 20px;
+      background: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      position: relative;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      text-decoration: none;
+    }
 
-        .top-nav {
-            background: #333;
-            display: flex;
-            justify-content: flex-start;
-            align-items: stretch;
-            height: 35px;
-        }
+    .nav-tab.active {
+      background: #ff8c42;
+      transform: translateY(3px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
 
-        .nav-tab {
-            padding: 0 20px;
-            background: transparent;
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-size: 14px;
-            position: relative;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            height: 100%;
-        }
+    .nav-tab:hover:not(.active) {
+      background: rgba(255, 140, 66, 0.3);
+    }
 
-        .nav-tab.active {
-            background: #ff8c42;
-        }
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 30px;
+    }
 
-        .nav-tab:hover:not(.active) {
-            background: rgba(255, 140, 66, 0.3);
-        }
+    .logo-panel {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
 
-        /* Main content area */
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            gap: 30px;
-        }
+    .logo-container {
+      position: relative;
+      display: inline-block;
+    }
 
-        /* Logo panel */
-        .logo-panel {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            width: 100%;
-            max-width: 500px;
-            text-align: center;
-        }
+    .logo-background {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-        .logo-container {
-            position: relative;
-            display: inline-block;
-        }
+    .logo-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
 
-        .logo-background {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(8px);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    .logo-placeholder {
+      width: 120px;
+      height: 120px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #333;
+      border: 2px dashed rgba(255, 255, 255, 0.4);
+    }
 
-        .logo-placeholder {
-            width: 120px;
-            height: 120px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #333;
-            border: 2px dashed rgba(255, 255, 255, 0.4);
-        }
+    .buttons-panel {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      overflow-x: auto;
+    }
 
-        /* Buttons panel */
-        .buttons-panel {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            width: 100%;
-            max-width: 800px;
-            display: flex;
-            flex-direction: row;
-            gap: 30px;
-            align-items: center;
-            justify-content: center;
-        }
+    .glass-button {
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 130px;
+      height: 130px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      white-space: nowrap;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
 
-        .glass-button {
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 20px;
-            color: white;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            width: 150px;
-            height: 150px;
-            min-width: 150px;
-            max-width: 150px;
-            min-height: 150px;
-            max-height: 150px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            white-space: nowrap;
-        }
+    .glass-button.active {
+      background: rgba(255, 140, 66, 0.4);
+      border-color: rgba(255, 140, 66, 0.6);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 140, 66, 0.3);
+    }
 
-        .glass-button:hover {
-            background: rgba(0, 0, 0, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
+    .glass-button:hover:not(.active) {
+      background: rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
 
-        .glass-button:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
+    .glass-button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
 
-        .glass-button.selected {
-            background: rgba(255, 215, 0, 0.3);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.2);
-            border: 1px solid rgba(255, 215, 0, 0.4);
-        }
+    .button-icon {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      flex-shrink: 0;
+    }
 
-        .button-icon {
-            width: 30px;
-            height: 30px;
-            display: inline-block;
-            flex-shrink: 0;
-        }
+    .content-panel {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      max-width: 800px;
+      height: 320px;
+      padding: 0;
+      margin-top: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
 
-        /* Bottom section */
-        .bottom-section {
-            margin-top: auto;
-        }
+    .content-panel.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
 
-        .bottom-line {
-            width: 100%;
-            height: 2px;
-            background: #000;
-        }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 15px;
+    }
 
-        .bottom-info {
-            background: #333;
-            padding: 8px 20px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            min-height: 35px;
-        }
+    .bottom-section {
+      margin-top: auto;
+    }
 
-        .info-text {
-            color: #ccc;
-            font-size: 12px;
-        }
+    .bottom-line {
+      width: 100%;
+      height: 2px;
+      background: #000;
+    }
 
-        /* Meet the members page */
-        .members-content {
-            display: none;
-            flex: 1;
-            padding: 40px 20px;
-            text-align: center;
-        }
+    .bottom-info {
+      background: #333;
+      padding: 8px 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      min-height: 35px;
+    }
 
-        .members-content.active {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+    .info-text {
+      color: #ccc;
+      font-size: 12px;
+    }
 
-        .members-panel {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 600px;
-            width: 100%;
-        }
+    @media (max-width: 768px) {
+      .main-content {
+        padding: 20px 10px;
+        gap: 20px;
+      }
+      .logo-panel, .buttons-panel, .content-panel {
+        max-width: 100%;
+        padding: 20px;
+      }
+      .glass-button {
+        width: 110px;
+        height: 110px;
+        font-size: 14px;
+        padding: 15px;
+      }
+      .button-icon {
+        width: 24px;
+        height: 24px;
+      }
+      .logo-image, .logo-placeholder {
+        width: 100px;
+        height: 100px;
+      }
+      .nav-tab {
+        padding: 0 15px;
+        font-size: 12px;
+      }
+      .dropdown-content {
+        min-width: 150px;
+      }
+    }
 
-        .members-title {
-            color: white;
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .members-text {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        /* Add smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Content sections positioning */
-        .content-section {
-            min-height: 100vh;
-            padding-top: 80px;
-        }
-        .smp-content, .cmp-content, .info-content, .addons-content {
-            display: none;
-            flex: 1;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .smp-content.active, .cmp-content.active, .info-content.active, .addons-content.active {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .content-panel {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .content-title {
-            color: white;
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .content-text {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 16px;
-            line-height: 1.6;
-        }
-    </style>
+    @media (max-width: 480px) {
+      .glass-button {
+        width: 90px;
+        height: 90px;
+        font-size: 12px;
+        padding: 10px;
+      }
+      .button-icon {
+        width: 20px;
+        height: 20px;
+      }
+      .info-text {
+        font-size: 11px;
+      }
+      .logo-image, .logo-placeholder {
+        width: 80px;
+        height: 80px;
+      }
+      .nav-tab {
+        padding: 0 10px;
+        font-size: 11px;
+      }
+    }
+</style>
 </head>
 <body>
+  <div class="top-nav">
+    <a class="nav-tab" href="index.html">Home</a>
+    <a class="nav-tab active" href="members.html">Meet the Members</a>
+    <a class="nav-tab" href="addons.html">Server Addons/Mods</a>
+    <a class="nav-tab" href="updates.html">Server Updates</a>
+  </div>
+  <div class="top-line"></div>
 
-    <div class="top-nav">
-      <a class="nav-tab" href="index.html">Home</a>
-      <a class="nav-tab active" href="members.html">Meet the Members</a>
-      <a class="nav-tab" href="addons.html">Server Addons/Mods</a>
-    </div>
-    <div class="top-line"></div>
-    
-<div class="main-content">
-
-        <div class="members-content active">
-          <div class="members-panel">
-            <h2 class="members-title">Meet the Members</h2>
-            <p class="members-text">
-              WIP
-            </p>
-          </div>
-        </div>
-        
-</div>
-
-    <div class="bottom-section">
-      <div class="bottom-line"></div>
-      <div class="bottom-info">
-        <span class="info-text">An official HiveTech product</span>
+  <div class="main-content">
+    <div class="content-panel visible">
+      <div style="padding: 20px; color: white;">
+        <h2>Meet the Members</h2>
+        <p>Details about server members will go here.</p>
       </div>
     </div>
-    
+  </div>
+
+  <div class="bottom-section">
+    <div class="bottom-line"></div>
+    <div class="bottom-info">
+      <span class="info-text">An official HiveTech product</span>
+    </div>
+  </div>
 </body>
 </html>

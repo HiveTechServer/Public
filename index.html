@@ -115,10 +115,11 @@
       width: 100%;
       max-width: 500px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
+      flex-wrap: nowrap;
+      gap: 20px;
       align-items: center;
       justify-content: center;
+      overflow-x: auto;
     }
 
     .glass-button {
@@ -133,8 +134,8 @@
       cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      width: 150px;
-      height: 150px;
+      width: 130px;
+      height: 130px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -143,9 +144,17 @@
       gap: 10px;
       white-space: nowrap;
       text-decoration: none;
+      flex-shrink: 0;
     }
 
-    .glass-button:hover {
+    .glass-button.active {
+      background: rgba(255, 140, 66, 0.4);
+      border-color: rgba(255, 140, 66, 0.6);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 140, 66, 0.3);
+    }
+
+    .glass-button:hover:not(.active) {
       background: rgba(0, 0, 0, 0.3);
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
@@ -174,6 +183,16 @@
       height: 320px;
       padding: 0;
       margin-top: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .content-panel.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
     }
 
     iframe {
@@ -217,8 +236,8 @@
         padding: 20px;
       }
       .glass-button {
-        width: 120px;
-        height: 120px;
+        width: 110px;
+        height: 110px;
         font-size: 14px;
         padding: 15px;
       }
@@ -226,12 +245,16 @@
         width: 24px;
         height: 24px;
       }
+      .logo-placeholder {
+        width: 100px;
+        height: 100px;
+      }
     }
 
     @media (max-width: 480px) {
       .glass-button {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
         font-size: 12px;
         padding: 10px;
       }
@@ -241,6 +264,10 @@
       }
       .info-text {
         font-size: 11px;
+      }
+      .logo-placeholder {
+        width: 80px;
+        height: 80px;
       }
     }
   </style>
@@ -263,20 +290,20 @@
     </div>
 
     <div class="buttons-panel">
-      <button class="glass-button" onclick="loadSection('smp.html')">
+      <button class="glass-button" onclick="loadSection('smp.html', this)" data-section="smp">
         <svg class="button-icon" viewBox="0 0 24 24" fill="white">
           <path d="M21 7L9 8L12 4L21 7ZM8 8L6 18L12 4L8 8Z"/>
         </svg>
         SMP
       </button>
-      <button class="glass-button" onclick="loadSection('cmp.html')">
+      <button class="glass-button" onclick="loadSection('cmp.html', this)" data-section="cmp">
         <svg class="button-icon" viewBox="0 0 24 24" fill="white">
           <rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="2" fill="none"/>
           <path d="M8 12H16M12 8V16" stroke="white" stroke-width="2"/>
         </svg>
         CMP
       </button>
-      <button class="glass-button" onclick="loadSection('info.html')">
+      <button class="glass-button" onclick="loadSection('info.html', this)" data-section="info">
         <svg class="button-icon" viewBox="0 0 24 24" fill="white">
           <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z"/>
           <path d="M14 2V8H20"/>
@@ -286,7 +313,7 @@
       </button>
     </div>
 
-    <div class="content-panel">
+    <div class="content-panel" id="contentPanel">
       <iframe id="sectionFrame" src=""></iframe>
     </div>
   </div>
@@ -299,8 +326,22 @@
   </div>
 
   <script>
-    function loadSection(page) {
-      document.getElementById('sectionFrame').src = page;
+    function loadSection(page, buttonElement) {
+      const iframe = document.getElementById('sectionFrame');
+      const contentPanel = document.getElementById('contentPanel');
+      const allButtons = document.querySelectorAll('.glass-button');
+      
+      // Remove active class from all buttons
+      allButtons.forEach(btn => btn.classList.remove('active'));
+      
+      // Add active class to clicked button
+      buttonElement.classList.add('active');
+      
+      // Load the page in iframe
+      iframe.src = page;
+      
+      // Show the content panel with animation
+      contentPanel.classList.add('visible');
     }
   </script>
 </body>

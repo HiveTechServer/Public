@@ -6,7 +6,7 @@
   <title>Server Addons/Mods</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
-* {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -60,161 +60,6 @@
       background: rgba(255, 140, 66, 0.3);
     }
 
-    .main-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-      gap: 30px;
-    }
-
-    .logo-panel {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      width: 100%;
-      max-width: 500px;
-      text-align: center;
-    }
-
-    .logo-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .logo-background {
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(8px);
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .logo-image {
-      width: 120px;
-      height: 120px;
-      border-radius: 12px;
-      object-fit: contain;
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .logo-placeholder {
-      width: 120px;
-      height: 120px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      color: #333;
-      border: 2px dashed rgba(255, 255, 255, 0.4);
-    }
-
-    .buttons-panel {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 40px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      width: 100%;
-      max-width: 500px;
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 20px;
-      align-items: center;
-      justify-content: center;
-      overflow-x: auto;
-    }
-
-    .glass-button {
-      background: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 20px;
-      color: white;
-      font-size: 16px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      width: 130px;
-      height: 130px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      white-space: nowrap;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-
-    .glass-button.active {
-      background: rgba(255, 140, 66, 0.4);
-      border-color: rgba(255, 140, 66, 0.6);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 140, 66, 0.3);
-    }
-
-    .glass-button:hover:not(.active) {
-      background: rgba(0, 0, 0, 0.3);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .glass-button:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .button-icon {
-      width: 30px;
-      height: 30px;
-      display: inline-block;
-      flex-shrink: 0;
-    }
-
-    .content-panel {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      width: 100%;
-      max-width: 800px;
-      height: 320px;
-      padding: 0;
-      margin-top: 40px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.3s ease;
-      pointer-events: none;
-    }
-
-    .content-panel.visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 15px;
-    }
-
     .bottom-section {
       margin-top: auto;
     }
@@ -238,62 +83,6 @@
       color: #ccc;
       font-size: 12px;
     }
-
-    @media (max-width: 768px) {
-      .main-content {
-        padding: 20px 10px;
-        gap: 20px;
-      }
-      .logo-panel, .buttons-panel, .content-panel {
-        max-width: 100%;
-        padding: 20px;
-      }
-      .glass-button {
-        width: 110px;
-        height: 110px;
-        font-size: 14px;
-        padding: 15px;
-      }
-      .button-icon {
-        width: 24px;
-        height: 24px;
-      }
-      .logo-image, .logo-placeholder {
-        width: 100px;
-        height: 100px;
-      }
-      .nav-tab {
-        padding: 0 15px;
-        font-size: 12px;
-      }
-      .dropdown-content {
-        min-width: 150px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .glass-button {
-        width: 90px;
-        height: 90px;
-        font-size: 12px;
-        padding: 10px;
-      }
-      .button-icon {
-        width: 20px;
-        height: 20px;
-      }
-      .info-text {
-        font-size: 11px;
-      }
-      .logo-image, .logo-placeholder {
-        width: 80px;
-        height: 80px;
-      }
-      .nav-tab {
-        padding: 0 10px;
-        font-size: 11px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -306,52 +95,7 @@
   </div>
   <div class="top-line"></div>
 
-  <!-- Main Content -->
-  <div class="main-content">
-
-    <!-- Logo Panel -->
-    <div class="logo-panel">
-      <div class="logo-container">
-        <div class="logo-background">
-          <div class="logo-placeholder">Server Logo</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Buttons Panel -->
-    <div class="buttons-panel">
-      <a class="glass-button active" href="#">
-        <img class="button-icon" src="https://via.placeholder.com/30" alt="Server Software" />
-        Server Software
-      </a>
-      <a class="glass-button" href="#">
-        <img class="button-icon" src="https://via.placeholder.com/30" alt="CMP Addons" />
-        CMP Addons
-      </a>
-      <a class="glass-button" href="#">
-        <img class="button-icon" src="https://via.placeholder.com/30" alt="SMP Addons" />
-        SMP Addons
-      </a>
-      <a class="glass-button" href="#">
-        <img class="button-icon" src="https://via.placeholder.com/30" alt="Resource Packs" />
-        Resource Packs
-      </a>
-      <a class="glass-button" href="#">
-        <img class="button-icon" src="https://via.placeholder.com/30" alt="Not Downloadable" />
-        Not Downloadable
-      </a>
-    </div>
-
-    <!-- Content Panel -->
-    <div class="content-panel visible">
-      <div style="padding: 20px; color: white;">
-        <h2>Server Addons / Mods</h2>
-        <p>Information about the current mods/addons used on the server will be displayed here.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bottom Section -->
+  <!-- Bottom Footer -->
   <div class="bottom-section">
     <div class="bottom-line"></div>
     <div class="bottom-info">
